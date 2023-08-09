@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('https://i.pinimg.com/736x/bf/47/dd/bf47dd1fcb67ce038a7539ba1eaefbf8.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+font-size:30px;
+font-family:cursive;
+}
+h1,label {
+  font-size: 50px;
+  background: -webkit-linear-gradient(#9933FF, #FF0066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+select {
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 30px;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+height:5px:
+}
+
+form{padding-top:100px;}
+</style>
+</head>
+<body>
+<center>
+<form action="ca.php" method="POST">
+<h1>CHECK AVAILABILITY</h1>
+<label for="bg">BLOOD GROUP</label><br>
+<select name="bg"id="bg">
+<option value=""></option>
+<option value="B+">B+</option>
+<option value="A+">A+</option>
+<option value="O+">O+</option>
+<option value="AB+">AB+</option>
+<option value="O-">O-</option>
+<option value="AB-">AB-</option>
+<option value="A-">A-</option>
+</select><br>
+<button>Submit</button>
+</form>
+</center>
+</body>
+</html>

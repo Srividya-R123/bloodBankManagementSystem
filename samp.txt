@@ -1,0 +1,136 @@
+<?php
+$con=mysqli_connect("localhost","root","","bbms");
+if(!$con)
+{
+die("Could not connect:" .mysqli_connect_error());
+}
+$userid=$_POST["userid"];
+$pwd=$_POST["pwd"];
+
+$result=mysqli_query($con,"select * from donors where Password=$pwd");
+echo "<center>";
+echo "<table>";
+echo "<br/><br/>";
+while($row=mysqli_fetch_array($result)){
+echo "<tr><td>Name</td><td>".$row['Name']."</td></tr>";
+echo "<br/>";
+echo "<tr><td>Email</td><td>".$row['Email']."</td></tr>";
+echo "<br/>";
+echo "<tr><td>Date of Birth</td><td>".$row['DOB']."</td></tr>";
+echo "<br/>";
+echo "<tr><td>Gender</td><td>".$row['Gender']."</td></tr>";
+echo "<br/>";
+echo "<tr><td>Blood Group</td><td>".$row['BloodGroup']."</td></tr>";
+echo "<br/>";
+echo "<tr><td>Address</td><td>".$row['Address']."</td></tr>";
+echo "<br/>";
+}
+echo "</table>";
+echo "</center>";
+mysqli_close($con);
+?>
+</body>
+</html>
+============
+$con=mysqli_connect("localhost","root","","bbms");
+if(!$con){
+die("Could not connect:" .mysqli_connect_error());
+}
+$userid=$_POST["userid"];
+$pwd=$_POST["pwd"];
+$result=mysqli_query($con,"select * from donors");
+echo "<center>";
+echo "<table border=1>";
+echo "<caption>Donors</caption>";
+echo "<br/><br/>";
+while($row=mysqli_fetch_array($result)){
+echo "<tr><th>Name</th><th>".$row['Name']."</th></tr>";
+echo "<br/>";
+}
+echo "</table>";
+echo "</center>";
+mysqli_close($con);
+========
+<?php
+$con=mysqli_connect("localhost","root","","bbms");
+if(!$con){
+die("Could not connect:" .mysqli_connect_error());
+}
+$name=$_POST["name"];
+$pwd=$_POST["pwd"];
+echo "$name";
+$result=mysqli_query($con,"select * from donors");
+echo "<center>";
+echo "<table border=1>";
+echo "<caption>Donors</caption>";
+echo "<br/><br/>";
+while($row=mysqli_fetch_array($result)){
+if($row['Name']==$name){
+echo "<tr><th>Name</th><th>".$row['Name']."</th></tr>";
+echo "<br/>";
+}
+echo "</table>";
+echo "</center>";}
+mysqli_close($con);
+?>
+=========
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+border:10px solid #FFFFFF;
+  width: 800px;
+height:500px;
+
+}
+
+th, td {
+border:10px solid #FFFFFF;
+  text-align: left;
+  padding: 8px;
+font-size:20px;
+font-weight:bold;
+font-family:"Sofia",sans-serif;
+}
+
+th{background-image: linear-gradient(135deg,#212121 10%, #F5F5F5 100%);}
+td{background-image: linear-gradient(135deg,#FFCCFF 10%, #CCFFFF 100%);}
+th {
+  background-color: #EC407A;
+  color: white;
+}
+h1{color:white;text-align:center;}
+body{background-image:url('https://us.123rf.com/450wm/vectorprodesign/vectorprodesign1908/vectorprodesign190800012/129337397-giant-heart
+-medicine-design-poster-vector-illustration-volunteers-put-lifeblood-in-heart-shaped-glas.jpg?ver=6');background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;font-family:cursive;}
+</style>
+</head>
+<body>
+<h1>Donor Details</h1>
+<?php
+echo "$_POST['bg']";
+$con=mysqli_connect("localhost","root","","bbms");
+if(!$con)
+{
+die("Could not connect:" .mysqli_connect_error());
+}
+$bg=$_POST["bg"];
+
+$result=mysqli_query($con,"select * from donors where BloodGroup=$bg");
+echo "<center>";
+echo "<table>";
+echo "<br/><br/>";
+echo "<tr><th>Name</th><th>Email</th><th>Email</th><th>DOB</th><th>Gender</th><th>BloodGroup</th><th>Address</th></tr>";
+while($row=mysqli_fetch_array($result)){
+echo "<tr><td>".$row['Name']."</td><td>".$row['Email']."</td><td>".$row['DOB']."</td><td>".$row['Gender']."</td><td>".$row['BloodGroup']."</td><td>".$row['Address']."</td></tr>";
+echo "<br/>";
+}
+echo "</table>";
+echo "</center>";
+mysqli_close($con);
+?>
+</body>
+</html>
+
